@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    width: 550px;
+    // min-width: 550px;
+    min-height: 500px;
+    border-top: 5px solid #e68a99;
+    box-shadow: 0 2px 5px #000;
+    margin: 5rem auto;
+    padding: 2rem 4rem;
+
+    &__header{
+        font-weight: 100;
+        font-size: 2.5em;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+    }
+
+    &__timer{
+        width: 100%;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    &__items{
+        margin: 2rem 0;
+        width: 100%;
+        line-height: 1rem;
+        .item{
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            &:not(:last-child){
+                margin-bottom: 1rem;
+            }
+
+            &::after{
+            content: '';
+            display: inline-block;
+            width: 50%;
+            height: 2px;
+            background-color: transparent;
+            margin: 1rem auto 0;
+            }
+            &:hover{
+                &::after{
+                background-color: #e68a99;
+                }
+            } 
+
+            &__degree-time{
+                color: #a3a1a1;
+            }
+
+            &__recipe{
+                width: 100%;
+            }
+
+        }
+
+        .btn{
+            font-size: 1rem;
+            color: #f74d6a;
+        }
+
+    }
+    &__history{
+        width: 6rem;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__item{
+            width: 6rem;
+            text-align: center;
+            font-size: 10px;
+            padding: .5rem 1rem;
+            background-color: #e68a99;
+            color: #fff;
+            border-radius: 40px;
+        }
+    }
+
+    &__button{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.btn{
+    background-color: transparent;
+    border: none;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover{
+        color: #e68a99;
+    }
+}
+
+
+@media screen and(max-width:550px) {
+    .menu{
+        width: 80%;
+        font-size: 12px;
+        padding: 2rem 1.5rem;
+        &__items{
+            margin: 1rem 0 0;
+        }
+
+        &__history{
+            width: 100%;
+            margin: 10px 0;
+            flex-direction: row;
+            order: 1;
+            &__item{
+                margin-right: 1rem;
+                width: 5rem;
+                padding: .5rem;
+            }
+        }
+        &__button{
+            order: 2;
+        }
+    }
+    
+}
